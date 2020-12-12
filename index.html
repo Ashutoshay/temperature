@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.drop{
+			position: relative;
+			display: inline-block;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,50%);
+			background-color: green;
+
+		}
+		.dropbtn{
+			background-color: #f33f3f75;
+			color: white;
+			padding: 20px;
+			font-size: 20px;
+			border:none;
+			cursor: pointer;
+
+		}
+		.drop-content{
+			display: none;
+			position: absolute;
+			background-color: #fff;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px black;
+			z-index: 1;
+			width: 100%;
+
+		}
+		.drop-content a{
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			border-bottom: 1px solid black;
+		}
+		.drop-content a:hover{
+			background-color: #fff;
+		}
+		.drop:hover .drop-content{
+			display: block;
+		}
+		.fohre{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			display: none;
+			height: 20vh;
+		}
+		.fohre input{
+			height: 50px;
+			width: 200px;
+			background-color: inherit;
+			box-shadow: inset 5px 5px 10px #847D53, inset -5px -5px 10px #847D53;
+			border:none;
+			border-radius: 5px;
+			border-bottom: 2px solid #5D5105;
+			outline: none;
+			text-align: center;
+			font-size: 20px;
+		}
+		.for{
+			background-color: #847D53;
+			height: 50vh;
+			margin-top: 120px;
+			border-radius: 20px;
+
+
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div class="drop">
+		<button class="dropbtn" id="btn">Click to conversion</button>
+	
+	<div class="drop-content">
+		<a href="#fohren" id="tofohren" onclick="fohren()">In Fohrenheit</a>
+		<a href="#cels" id="tocels" onclick="fohren1()">In Celsius</a>
+		
+	</div>
+	</div>
+	<div class="for">
+	<div class="fohre" id="fohren">
+		<form onsubmit="event.preventDefault()">
+			<h1 style="text-align: center;">Celsius To Fohrenheit</h1>
+			<table >
+				<tr>
+					<td>Enter Celsius</td>
+					<td><input type="text" name="Celsius" id="cels"></td>
+				</tr>
+				<tr>
+					<td><button style="background-color: #fff; height: 40px;width: 90px; cursor: pointer; border:none; border-radius: 5px;" onclick="infohren()">Fohrenhiet</button></td>
+					<td><input type="text" name="" id="celoutput"></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+
+	<div class="fohre" id="celss">
+		<h1 style="text-align: center;">Fohrenheit To Celsius </h1>
+		<form onsubmit="event.preventDefault()">
+			<table >
+				<tr>
+					<td>Enter Fohrenheit</td>
+					<td><input type="text" name="Celsius" id="foh"></td>
+				</tr>
+				<tr>
+					<td><button style="background-color: #fff; height: 40px;width: 80px; cursor: pointer;border:none;border-radius: 5px;" onclick="incels()">Celsius</button></td>
+					<td><input type="text" name="" id="fohrenoutput"></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+</div>
+
+
+<script type="text/javascript" >
+	function fohren(){
+		debugger;
+	document.getElementById('fohren').style.display = 'block';
+	document.getElementById('celss').style.display = 'none';
+
+// 	document.getElementById('btn').innerHTML = 'Conversion of Fohrenheit';
+	
+}
+function fohren1(){
+	document.getElementById('celss').style.display = 'block';
+	document.getElementById('fohren').style.display = 'none';
+// document.getElementById('btn').innerHTML = 'Conversion of Celsius';
+	
+	
+}
+function infohren(){
+	var x = document.getElementById('cels').value;
+	x = Number(x);
+	var y = (x*(9/5)+32);
+	document.getElementById('celoutput').value = y;
+	
+}
+function incels(){
+	var x = document.getElementById('foh').value;
+	x = Number(x);
+	var y = (x-32)*(5/9);
+	document.getElementById('fohrenoutput').value = y;
+}
+</script>
+</body>
+</html>
